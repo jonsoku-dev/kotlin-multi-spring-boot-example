@@ -35,7 +35,6 @@ subprojects {
         plugin("kotlin-spring")
         plugin("kotlin-jpa")
         plugin("idea")
-        plugin("eclipse")
         plugin("org.springframework.boot")
         plugin("io.spring.dependency-management")
         plugin( "org.jetbrains.kotlin.plugin.allopen")
