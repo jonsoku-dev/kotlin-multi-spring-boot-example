@@ -1,21 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath( "org.jetbrains.kotlin:kotlin-noarg:1.3.71")
-    }
-}
-
 plugins {
     kotlin("jvm") version "1.4.21"
     kotlin("plugin.spring") version "1.4.21"
     id("org.springframework.boot") version "2.4.1" apply false
     id("io.spring.dependency-management") version "1.0.10.RELEASE" apply false
     id("org.jetbrains.kotlin.plugin.allopen") version "1.4.30-M1" apply false
+    id("org.jetbrains.kotlin.plugin.noarg") version "1.4.30-M1" apply false
 }
 
 allprojects {
@@ -26,10 +17,6 @@ allprojects {
 }
 
 subprojects {
-    repositories {
-        mavenCentral()
-    }
-
     apply {
         plugin("kotlin")
         plugin("kotlin-spring")
@@ -38,6 +25,7 @@ subprojects {
         plugin("org.springframework.boot")
         plugin("io.spring.dependency-management")
         plugin( "org.jetbrains.kotlin.plugin.allopen")
+        plugin( "org.jetbrains.kotlin.plugin.noarg")
     }
 
     group = "com.tamastudy"

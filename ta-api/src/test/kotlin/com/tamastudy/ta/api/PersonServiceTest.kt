@@ -1,15 +1,13 @@
 package com.tamastudy.ta.api
 
+import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
-@SpringBootTest
-internal class PersonServiceTest(
-        private val personService: PersonService
-) {
+internal class PersonServiceTest{
     @Test
     fun `test 1`() {
-        println(personService.test())
+        Assertions.assertThat(2).isEqualTo(2)
     }
 }
