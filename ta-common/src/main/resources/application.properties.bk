@@ -1,0 +1,12 @@
+server.address=localhost
+server.port=8080
+
+spring.datasource.hikari.jdbc-url=jdbc:mysql://127.0.0.1:3308/ta?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+spring.datasource.hikari.username=the2792
+spring.datasource.hikari.password=canyou12
+spring.datasource.hikari.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+spring.jpa.database=mysql
+spring.jpa.show-sql=true

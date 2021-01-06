@@ -7,6 +7,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.10.RELEASE" apply false
     id("org.jetbrains.kotlin.plugin.allopen") version "1.4.30-M1" apply false
     id("org.jetbrains.kotlin.plugin.noarg") version "1.4.30-M1" apply false
+    id("org.jetbrains.kotlin.kapt") version "1.4.30-M1" apply false
 }
 
 allprojects {
@@ -26,13 +27,17 @@ subprojects {
         plugin("io.spring.dependency-management")
         plugin( "org.jetbrains.kotlin.plugin.allopen")
         plugin( "org.jetbrains.kotlin.plugin.noarg")
+        plugin("org.jetbrains.kotlin.kapt")
     }
 
-    group = "com.tamastudy"
+    group = "com.tamastudy.ta"
     version = "0.0.1-SNAPSHOT"
     java.sourceCompatibility = JavaVersion.VERSION_1_8
 
     dependencies {
+        implementation("org.springframework.boot:spring-boot-configuration-processor")
+        compileOnly("org.springframework.boot:spring-boot-configuration-processor")
+
         implementation("org.springframework.boot:spring-boot-starter")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -54,7 +59,6 @@ subprojects {
 project("ta-common") {
     dependencies {
         implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-        runtimeOnly("com.h2database:h2")
         runtimeOnly("mysql:mysql-connector-java")
     }
 
